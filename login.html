@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+ <head> 
+ <title> Login Page </title>
+ </head>
+ <body> 
+ <center> <h2> Login </h2> </center>
+ 
+ 
+ 
+ <form action="1" onsubmit="return authenticate()">
+      <Center> <label for="username"></label>
+      <input
+        id="username"
+        type="text"
+        placeholder="Enter Username"
+        name="username"
+        required
+      /> 
+	  </center>
+	  
+	  <br>
+     <center> <label for="password"></label> 
+      <input
+        id="password"
+        type="password"
+        placeholder="Enter Password"
+        name="password"
+        required 
+      />
+	  </center>
+	  
+	  <br>
+     <center> <button type="submit">Submit</button> </center>
+    </form>
+    
+    <script>
+    
+    //Following function gets values of the username and password fields and checks to see if they match a hard coded username and password 
+      function authenticate(){
+        var authorised;
+        
+        //get input values
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        
+        //check to see if the password and username match
+        if(username == "chinaman" && password == "123456789"){
+          authorised = true;
+        }else{ // username or password do not match
+          authorised = false;
+          //alert user
+          alert("Sorry, password is incorrect.");
+        }
+        //return result
+        return authorised;
+      }
+    </script>
+	</body>
+	</html>
